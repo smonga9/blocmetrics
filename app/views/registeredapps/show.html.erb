@@ -1,7 +1,7 @@
 <h1><%= @registeredapp.name %></h1>
  <div class="row">
 	<div class="col-md-8">
-		<h4>URL: <%= link_to @registeredapp.url, "http://#{@registeredapp.url}" %></h4>
+		<h4>URL: <%= link_to @registeredapp.url, "#{@registeredapp.url}" %></h4>
     <% @events.each do |event| %>
 			<p style="font-size:16px; color:blue;"><%= event.name %></p>
 		<% end %>
