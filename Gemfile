@@ -10,6 +10,9 @@ source 'https://rubygems.org'
  gem 'devise'
  gem 'bootstrap-sass'
  gem 'faker'
+ gem 'chartkick'
+ gem 'groupdate'
+ gem 'pg'
 
  group :production do
    # Use pg as the production database for Active Record

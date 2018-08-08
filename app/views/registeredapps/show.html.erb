@@ -1,10 +1,11 @@
+<%= javascript_include_tag "https://www.google.com/jsapi" %>
+
 <h1><%= @registeredapp.name %></h1>
  <div class="row">
 	<div class="col-md-8">
 		<h4>URL: <%= link_to @registeredapp.url, "#{@registeredapp.url}" %></h4>
-    <% @events.each do |event| %>
-			<p style="font-size:16px; color:blue;"><%= event.name %></p>
-		<% end %>
+			<%= pie_chart @registered_application.events.group(:name).count %>
+      <%= line_chart @events.group_by_day(:created_at).count %>
 		<p style="font-size:14px;"><%= @events.count %> events exist for this app</p>
 		<p style="font-size:12px;">Added by <%= @registeredapp.user.email %></p>
 	</div>
